@@ -10,6 +10,7 @@ import java.util.Scanner;
 import static projetjava.GestionProfesseurs.compteur;
 
 import static projetjava.GestionProfesseurs.sousmenuprofesseur;
+import static projetjava.Projetjava.input;
 
 /**
  *
@@ -43,23 +44,13 @@ public class GestionEtudiant extends Etudiant{
      }while(reponse.equals("oui"));
      }
      
-     public static void supprimeretudiant(Etudiant[] Etudiant) {
+    
+     public static void modifieretudiant() {
         System.out.println("Veuillez saisir l'Id de l'étudiant");
         int p = input.nextInt();
         if (p != -1)
         {
-            for (int i = p; i < compteur - 1; i++)
-                etudiants.set(i, Etudiant[i + 1]);
-            compteur--;
-        }
- 
-    }
-     
-     public static void modifieretudiant(Etudiant[] Etudiant) {
-        System.out.println("Veuillez saisir l'Id de l'étudiant");
-        int p = input.nextInt();
-        if (p != -1)
-        {
+            Etudiant[] Etudiant = null;
             for (int i = p; i < compteur - 1; i++)
                 etudiants.set(i, Etudiant[i + 1]);
             compteur++;
@@ -67,7 +58,27 @@ public class GestionEtudiant extends Etudiant{
  
     }
       
-     
+      public static void supprimeretudiant() {
+       Etudiant[] Etudiant = null;
+     System.out.println("Veuillez saisir l'Id de l'étudiant");
+       int p = input.nextInt();
+        if (p != -1)
+        {
+            for (int i = p; i < compteur - 1; i++)
+                etudiants.set(i, Etudiant[i + 1]);
+            compteur--;
+        }
+      System.out.println("Etudiant supprimé avec succés");
+   }
+
+
+
+    public static void afficheretudiants() {
+    Iterable<Etudiant> Etudiant = null;
+  for(Etudiant e: etudiants){{
+      System.out.println("Voici la liste de tous les étudiants");
+      e.affichervaleur();
+     }}    }
    
    static int sousmenuetudiant(){
          System.out.println("1-Ajouter un étudiant");

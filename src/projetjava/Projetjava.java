@@ -17,6 +17,11 @@ import static projetjava.GestionEtudiant.sousmenuetudiant;
 import static projetjava.GestionProfesseurs.ajouterProfesseur;
 import java.util.ArrayList;
 import static projetjava.Etudiant.inputetd;
+import static projetjava.GestionEtudiant.afficheretudiants;
+import static projetjava.GestionEtudiant.ajouteretudiant;
+import static projetjava.GestionEtudiant.modifieretudiant;
+import static projetjava.GestionEtudiant.supprimeretudiant;
+import static projetjava.GestionGroupes.affichergroupe;
 import static projetjava.GestionGroupes.ajoutergroupe;
 import static projetjava.GestionGroupes.groupe;
 import static projetjava.GestionGroupes.menup;
@@ -25,7 +30,10 @@ import static projetjava.GestionGroupes.supprimergroupe;
 import static projetjava.GestionGroupes.voirdetailsgrp;
 import static projetjava.GestionProfesseurs.afficherprof;
 import static projetjava.GestionProfesseurs.compteur;
+import static projetjava.GestionProfesseurs.modifierprofesseur;
 import static projetjava.GestionProfesseurs.professeur;
+import static projetjava.GestionProfesseurs.supprimerprofesseur;
+import static projetjava.GestionProfesseurs.voirdetailsprof;
 
 
 /**
@@ -81,21 +89,7 @@ public class Projetjava {
     
     
     
-    
-   public static void ajouteretudiant(){
-     String reponse;
-     do {
-     etd= new Etudiant();
-     etd.saisirvaleur();
-     etudiants.add(etd);
-     
-     System.out.println("Etudiant ajouté avec succés");
-     System.out.println("Voulez vous ajouter un nouvel étudiant");
-     reponse=input.next();
-     }while(reponse.equals("oui"));
-    
-    
-     }
+
 
    public static void voirdetails(){
        for(Etudiant e: etudiants){{
@@ -209,72 +203,12 @@ public static void setchoice2(){
 }
  
 
-   public static void supprimeretudiant() {
-       Etudiant[] Etudiant = null;
-     System.out.println("Veuillez saisir l'Id de l'étudiant");
-       int p = input.nextInt();
-        if (p != -1)
-        {
-            for (int i = p; i < compteur - 1; i++)
-                etudiants.set(i, Etudiant[i + 1]);
-            compteur--;
-        }
-      System.out.println("Etudiant supprimé avec succés");
-   }
+  
 
-    public static void modifieretudiant() {
- System.out.println("Ssaisir l'Id de l'étudiant à modifier");
-        int p = input.nextInt();
-        if (p != -1)
-        {
-           Etudiant[] Etudiant = null;
-            for (int i = p; i < compteur - 1; i++)
-                etudiants.set(i, Etudiant[i + 1]);
-            compteur++;
-        }    }
 
-    public static void afficheretudiants() {
-    Iterable<Etudiant> Etudiant = null;
-  for(Etudiant e: etudiants){{
-      System.out.println("Voici la liste de tous les étudiants");
-      e.affichervaleur();
-     }}    }
+    
 
-    public static void modifierprofesseur() {
-System.out.println("Ssaisir l'Id du professeur à modifier");
-        int p = input.nextInt();
-        if (p != -1)
-        {
-           Professeurs[] Professeurs = null;
-            for (int i = p; i < compteur - 1; i++)
-                professeur.set(i, Professeurs[i + 1]);
-            compteur++;
-        }      }
-
-     public static void voirdetailsprof(){
-       for(Professeurs pf: professeur){{
-     pf.AfficherValeurProf();
-     }}}
-
-    public static void supprimerprofesseur() {
- Professeurs[] Professeurs = null;
-     System.out.println("Veuillez saisir l'Id du professeur");
-       int p = input.nextInt();
-        if (p != -1)
-        {
-            for (int i = p; i < compteur - 1; i++)
-                professeur.set(i, Professeurs[i + 1]);
-            compteur--;
-        }
-      System.out.println("Professeur supprimé avec succés");    }
-
-    public static void affichergroupe() {
-            Iterable<Groupe> Groupe = null;
-  for(Groupe g: groupe){{
-      System.out.println("Voici la liste de tous les groupe");
-      g.affichervaleurgroupe();
-     }} 
-    }
+   
     
 
     

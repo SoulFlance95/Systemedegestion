@@ -89,7 +89,13 @@ public class GestionGroupes {
         }
  
     }
-      
+       public static void affichergroupe() {
+            Iterable<Groupe> Groupe = null;
+  for(Groupe g: groupe){{
+      System.out.println("Voici la liste de tous les groupe");
+      g.affichervaleurgroupe();
+     }} 
+    }
         
     }
   

@@ -7,6 +7,7 @@ package projetjava;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import static projetjava.Projetjava.input;
 
 /**
  *
@@ -51,5 +52,33 @@ return (inputprof.nextInt());
         }while(rep.equals("oui"));
         
     }
+    public static void supprimerprofesseur() {
+ Professeurs[] Professeurs = null;
+     System.out.println("Veuillez saisir l'Id du professeur");
+       int p = input.nextInt();
+        if (p != -1)
+        {
+            for (int i = p; i < compteur - 1; i++)
+                professeur.set(i, Professeurs[i + 1]);
+            compteur--;
+        }
+      System.out.println("Professeur supprimé avec succés");    }
     
+    
+    
+    public static void modifierprofesseur() {
+System.out.println("Ssaisir l'Id du professeur à modifier");
+        int p = input.nextInt();
+        if (p != -1)
+        {
+           Professeurs[] Professeurs = null;
+            for (int i = p; i < compteur - 1; i++)
+                professeur.set(i, Professeurs[i + 1]);
+            compteur++;
+        }      }
+
+     public static void voirdetailsprof(){
+       for(Professeurs pf: professeur){{
+     pf.AfficherValeurProf();
+     }}}
 }
