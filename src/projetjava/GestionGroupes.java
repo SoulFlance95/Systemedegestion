@@ -10,7 +10,11 @@ import projetjava.Groupe;
 import projetjava.Professeurs;
 import projetjava.Etudiant;
 import static projetjava.GestionEtudiant.etudiants;
+import static projetjava.GestionEtudiant.sousmenuetudiant;
 import static projetjava.GestionProfesseurs.compteur;
+import static projetjava.GestionProfesseurs.sousmenuprofesseur;
+import static projetjava.Projetjava.setchoice;
+import static projetjava.Projetjava.setchoice1;
 
 /**
  *
@@ -22,7 +26,8 @@ public class GestionGroupes {
     static int compteur=0;
     static int monchoix;
    static ArrayList<Groupe> groupe= new ArrayList<Groupe>();
- 
+    static Scanner inputm=new Scanner(System.in);
+    static int mychoice;
     
    
     
@@ -38,6 +43,7 @@ public class GestionGroupes {
        }
     static void menup(){
      do{monchoix=input.nextInt();
+      mychoice=inputm.nextInt();
    
         System.out.println("1-Gestion Groupe");
          System.out.println("2-Gestion Etudiants");
@@ -47,6 +53,41 @@ public class GestionGroupes {
     
     } while(monchoix==6);
     }
+    
+    public static void mainchoice(){
+    switch(mychoice){
+        case 1:
+       sousmenuprincipal();
+           menup();
+           break;
+           
+       case 2:
+           sousmenuetudiant();
+           setchoice();
+           break;
+           
+       case 3:
+           sousmenuprofesseur();
+           setchoice1();
+           break;
+           
+       case 5:
+           System.exit(0);
+           break;
+ }
+   
+    
+    }   
+  
+    
+
+    
+    
+    
+    
+    
+    
+    
        public static void voirdetailsgrp(){
        for(Groupe g: groupe){{
      g.affichervaleurgroupe();
