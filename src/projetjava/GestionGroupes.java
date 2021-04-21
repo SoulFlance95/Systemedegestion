@@ -43,7 +43,7 @@ public class GestionGroupes {
        }
     static void menup(){
      do{monchoix=input.nextInt();
-      mychoice=inputm.nextInt();
+     
    
         System.out.println("1-Gestion Groupe");
          System.out.println("2-Gestion Etudiants");
@@ -54,30 +54,7 @@ public class GestionGroupes {
     } while(monchoix==6);
     }
     
-    public static void mainchoice(){
-    switch(mychoice){
-        case 1:
-       sousmenuprincipal();
-           menup();
-           break;
-           
-       case 2:
-           sousmenuetudiant();
-           setchoice();
-           break;
-           
-       case 3:
-           sousmenuprofesseur();
-           setchoice1();
-           break;
-           
-       case 5:
-           System.exit(0);
-           break;
- }
-   
     
-    }   
   
     
 
